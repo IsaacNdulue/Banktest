@@ -1,5 +1,5 @@
 {
-    "name": "Multer",
+    "name": "multer",
     "builds": [
       {
         "src": "server.js",
