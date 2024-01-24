@@ -1,0 +1,26 @@
+{
+    "name": "Multer",
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/api/v1/user/(.*)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/server.js"
+      }
+    ]
+  }
