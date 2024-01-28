@@ -1,15 +1,16 @@
 const userModel = require('../models/studentModel');
-const fs = require('fs')
+// const fs = require('fs')
+const cloudinary = require('../utils/cloudinary')
 
 exports.signUp = async (req, res) => {
     try {
         const { fullName, stack } = req.body;
-        const file = req.file.filename
-
+        const file = req.file.path
+        const result = await cloudinary.uploader.upload(file)
         const profile = await userModel.create({
             fullName,
             stack,
-            profileImage: file
+            profileImage: result.secure_url
         })
 
         if (!profile) {

@@ -28,13 +28,6 @@ const upload = multer({
     limits: fileSize
 })
 
-import {v2 as cloudinary} from 'cloudinary';
-          
-cloudinary.config({ 
-  cloud_name: 'dipfhvnlw', 
-  api_key: '383194825996132', 
-  api_secret: 'QacWaBn7LhXh4EJvusuMj9cVIao' 
-});
 
 
 module.exports = upload
